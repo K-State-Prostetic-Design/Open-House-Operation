@@ -34,7 +34,7 @@ enum GameState {
  */
 struct State {
   GameState state;
-} operation;
+} operation; // initial global state
 
 /*
  * Set up the program to know what pins are used for
@@ -44,18 +44,10 @@ void setup() {
   PinMode(SPEAKER, OUTPUT);
   PinMode(LED, OUTPUT);
   PinMode(BOARD, INPUT);
-  operation.playing = false;
+  operation.playing = GameState.Idle;
 }
 
 /*
  * Main loop to do stuff
  */
-void loop() {
-  // if (operation.playing) {
-  //     if (digitalRead(BOARD)) { // ie smack side of person viscously
-  //       digitalWrite(LED, HIGH);
-  //       digitalWrite(SPEAKER, HIGH);
-  //       analogWrite()
-  //     }
-  // }
-}
+void loop() {}
